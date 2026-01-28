@@ -1,0 +1,20 @@
+Sorting Algorithms
+Bubble sort = Worst O(n²) / Best O(n)
+Compara se n é maior que n + 1, se sim, troca os dois de posição. Pula para o próximo e faz a mesma comparação até o penúltimo/último elemento.
+
+Selection sort = Worst O(n²) / Best O(n²)
+Seleciona o primeiro elemento como sendo o menor. Então, compara com todos os outros da lista, se encontrar algum elemento que seja menor, agora este vira o parâmetro, e troca o valor com o parâmetro anterior. Pula para o próximo elemento e faz a mesma coisa até o final dos elementos.
+
+Insertion sort = Worst O(n²) / Best O(n)
+A ideia é separar os elementos da lista entre ORDENADOS e NÃO ORDENADOS. Para isso, define o primeiro elemento da lista como sendo o elemento chave. Então, começando do segundo elemento, compara com o elemento chave. Se for menor que o chave, move o segundo elemento para a esquerda (antes do chave). Agora todos os que estão na esquerda (antes do chave) são considerados os ordenados. Os da direita são considerados os não ordenados ainda. Depois, pega o próximo elemento da direita (depois do chave), compara com todos os da esquerda e insere no local correto entre os ordenados. Faz isso até passar por todos os não ordenados (da direita), até que eles estejam nos ordenados (esquerda).
+
+Quicksort = Worst O(n²) / Best O(n log (n))
+Escolhe um elemento para ser o pivô, por exemplo, o último. Então, faz uma operação de particionar. Para isso, define j = 0 e i = -1. Compara se o arr[i] é menor que o pivô. Se sim, incrementa i e troca arr[i] com arr[j]. Incrementa j até chegar ao pivô. Essa operação coloca os menores elementos na esquerda e os maiores na direita. No final, coloca o pivô em i + 1 (ou seja, entre os menores e maiores). A operação de particionar retorna o índice do pivô, que será usado para recursivamente ordenar as partições (À esquerda e à direita do pivô), sendo que para os menores será usado como indíce final, e para os maiores como índice inicial. O Quicksort é um algoritmo recursivo, então vai sempre particionando e ordenando entre números maiores e menores que o pivô, e até que cada partição tenha apenas 1 elemento (ou seja, todos já estão ordenados).
+
+Mergesort = Worst O(n log (n)) / Best O(n log (n))
+Mergesort também é um algoritmo recursivo de dividir e conquistar, assim como o Quicksort. Porém, ao invés de ir ordenando conforme vai particionando, o Mergesort primeiro divide todo o array até que tenha apenas blocos de 1 elemento, e faz a ordenação no merge das partes.
+
+https://42-cursus.gitbook.io/guide/2-rank-02/push_swap/algorithms
+https://builtin.com/machine-learning/fastest-sorting-algorithm
+https://www.geeksforgeeks.org/dsa/insertion-sort-algorithm/
+https://www.geeksforgeeks.org/dsa/quick-sort-algorithm/
