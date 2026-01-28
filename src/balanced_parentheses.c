@@ -6,30 +6,30 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 22:31:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/01/28 18:14:56 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/01/28 18:34:49 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "studies.h"
 
-int	is_opening(char c)
+static int	is_opening(char c)
 {
 	return (c == '(' || c == '[' || c == '{');
 }
 
-int	is_closing(char c)
+static int	is_closing(char c)
 {
 	return (c == ')' || c == ']' || c == '}');
 }
 
-int	are_pair(char opening, char closing)
+static int	are_pair(char opening, char closing)
 {
 	return ((opening == '(' && closing == ')')
 		|| (opening == '[' && closing == ']')
 		|| (opening == '{' && closing == '}'));
 }
 
-int	is_balanced_parentheses(t_list **top, const char *expression)
+static int	is_balanced_parentheses(t_list **top, const char *expression)
 {
 	int	i;
 
