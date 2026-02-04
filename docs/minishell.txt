@@ -1,0 +1,46 @@
+Builtins:
+echo (com opção -n)
+- Argumentos: Opções, String
+- Retorno: String exibida na tela
+- Fluxo de execução:
+    - Pegar path pelo envp e testar até encontrar path correto
+    - OU usar path absoluto/relativo passado pelo usuário
+    - Executar comando com execve
+
+cd (caminho relativo ou absoluto)
+- Argumentos: String [diretório]
+- Retorno: Mudança de diretório
+- Fluxo de execução:
+
+pwd
+- Argumentos: Nenhum
+- Retorno: Caminho do diretório atual
+- Fluxo de execução:
+    - Pegar path pelo envp e testar até encontrar path correto
+    - OU usar path absoluto/relativo passado pelo usuário
+    - Executar comando com execve
+
+export
+- Argumentos: 
+- Retorno: 
+
+unset
+- Argumentos: 
+- Retorno: 
+
+env
+- Argumentos: 
+- Retorno: 
+
+exit
+- Argumentos: 
+- Retorno: 
+
+Redirecionamentos:
+>
+<
+>>
+<<
+
+Pipe:
+|

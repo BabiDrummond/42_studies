@@ -1,17 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   studies.h                                          :+:      :+:    :+:   */
+/*   builtins.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/26 22:30:19 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/02/03 23:17:35 by bmoreira         ###   ########.fr       */
+/*   Created: 2026/02/03 23:17:03 by bmoreira          #+#    #+#             */
+/*   Updated: 2026/02/04 01:25:50 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef STUDIES_H
-# define STUDIES_H
 
 # include <stdio.h>
 # include <unistd.h>
@@ -19,16 +16,8 @@
 # include <fcntl.h>
 # include <sys/wait.h>
 
-typedef struct s_list
-{
-	int				number;
-	struct s_list	*next;
-}	t_list;
-
-// Stack
-t_list	*new_node(int number);
-void	push(t_list **top, t_list *node);
-void	pop(t_list **top);
-int		is_empty(t_list **top);
-
-#endif
+int main(int argc, char **argv)
+{   
+    (void) argc;
+    execve("usr/bin/cd", argv + 1, 0);
+}
