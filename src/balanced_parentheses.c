@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 22:31:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/01/28 18:34:49 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/01/28 20:49:21 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,9 @@ int	main(void)
 
 	top = NULL;
 	printf("is empty? %d\n", is_empty(&top));
-	printf("isBalanced? %d\n", is_balanced_parentheses(&top, "{[()]}"));
+	printf("isBalanced? %d\n", is_balanced_parentheses(&top, "[( )]"));
+	printf("isBalanced? %d\n", is_balanced_parentheses(&top, "{[()}]"));
+	printf("isBalanced? %d\n", is_balanced_parentheses(&top, "{[(()}]"));
+	printf("isBalanced? %d\n", is_balanced_parentheses(&top, " })({"));
 	printf("is empty? %d\n", is_empty(&top));
 }

@@ -1,0 +1,11 @@
+Infix Notation
+a + b
+Prefix Notation
++ a b
+Postfix Notation
+a b +
+
+Examples:
+Infix: a * b + c * d - e
+Postfix: (a * b) + (c * d) - e => {(* a b) + (* c d)} - e => - {+ (* a b) (* c d)} e => - + * a b * c d e
+Postfix: (a * b) + (c * d) - e => {(a b *) + (c d *)} - e => {(a b *) (c d *) +} e - => a b * c d * + e -
