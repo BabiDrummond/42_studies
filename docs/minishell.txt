@@ -9,20 +9,32 @@ echo (com opção -n)
 - Argumentos: Opções, String, Variáveis expandidas
 - Retorno: Exibir string na tela
 - Fluxo de execução:
-    - Printar string
-    - Printar quebra de linha
+    - Receber args
+    - Verificar se opção -n é fornecida. Se sim, guardar numa variável booleana
+    - Printar string e variáveis expandidas (convertidas para string anteriormente)
+    - Se opção -n foi fornecida, não printar quebra de linha. Se não, printar quebra de linha
 
 cd (caminho relativo ou absoluto)
 - Argumentos: String [diretório]
 - Retorno: Mudança de diretório
 - Fluxo de execução:
-    
+    - Receber infos do envp e args
+    - Checar valor do PWD do envp
+    - Checar string para definir target dir
+    - Se string .., deve-se remover um nível de diretório
+    - Se string ~, deve-se mover para diretório /home
+    - Se string contém nome de diretório, verificar se diretório existe e mover para ele. Caso não exista, informar que diretório não existe
+    - Se houver uma / no meio da string, aplicar split na barra, e executar da esquerda para a direta (recursivamente)
+    - Ir guardando o diretório atual em cada iteração
+    - Ao final, dar unset na variável de ambiente PWD, e export no novo valor atualizado
 
 pwd
 - Argumentos: Nenhum
 - Retorno: Caminho do diretório atual
 - Fluxo de execução:
-
+    - Receber infos do envp
+    - Checar valor do PWD do envp
+    - Printar na tela valor do PWD
 
 export
 - Argumentos: 
