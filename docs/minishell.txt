@@ -37,16 +37,29 @@ pwd
     - Printar na tela valor do PWD
 
 export
-- Argumentos: 
-- Retorno: 
+- Argumentos: Envp, Variável {key, value}
+- Retorno: Envp atualizado com nova variável
+- Fluxo de execução:
+    - Receber lista ou hashtable com valores do envp, nome da variável e valor da variável
+    - Percorrer o envp para checar se há alguma variável de mesmo nome
+    - Se sim, atualizar valor após nome da variável com valor fornecido na função
+    - Se não, adicionar mais um nó na lista, contendo nome da variável e valor
 
 unset
-- Argumentos: 
-- Retorno: 
+- Argumentos: Envp, Variável {key}
+- Retorno: Envp atualizado com variável removida
+- Fluxo de execução:
+    - Receber lista ou hashtable com valores do envp e nome da variável
+    - Percorrer o envp até encontrar variável de mesmo nome
+    - Se encontrar, remover o nó da lista
+    - Se não, retornar lista sem alterações
 
 env
-- Argumentos: 
-- Retorno: 
+- Argumentos: Envp
+- Retorno: Printar conteúdo do envp (todas as variáveis de ambiente salvas)
+- Fluxo de execução:
+    - Percorrer a lista do envp
+    - Printar o valor de cada nó
 
 exit
 - Argumentos: 
