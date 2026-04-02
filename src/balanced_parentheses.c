@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 22:31:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/01/28 20:49:21 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/02 19:56:07 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	is_balanced_parentheses(t_list **top, const char *expression)
 				return (0);
 			else
 				pop(top);
-		}	
+		}
 		i++;
 	}
 	return (is_empty(top));
