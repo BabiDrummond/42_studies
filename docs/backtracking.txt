@@ -1,0 +1,17 @@
+Backtracking essential:
+- Choices: Qual as opçoes de escolha para resolver o problema?
+- Constraints: Quais são as limitações da escolha (validação)?
+- Goal: Chegar no base case.
+Observação: Caso a escolha atual falhe na validação, é necessário revertê-la.
+
+Fluxo:
+1. Checar base case. Se chegou ao base case, retorna.
+2. Iterar pelas possíveis escolhas.
+3. Para cada escolha, testar se é válida.
+4. Se válida, chamar recursão.
+5. Se não, reverter escolha e tentar a próxima.
+
+Parentheses:
+Base case: Parenteses estão balanceados
+Opções: Substituir parenteses por espaço
+Validação: Ainda há a mesma quantidade de pares? Se sim, chamar recursão. Se não, reverter.
