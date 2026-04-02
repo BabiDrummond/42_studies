@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 17:03:55 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/02 20:01:39 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/02 20:30:30 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,15 @@ int	ft_strlen(const char *s)
 	return (len);
 }
 
-char	*ft_strdup(const char *s)
+char	*ft_scpy(char *old)
 {
-	char	*new;
-	int		i;
+	static char	new[1000] = {0};
+	int			i;
 
 	i = 0;
-	if (!s)
-		return (NULL);
-	new = calloc(ft_strlen(s) + 1, sizeof(char));
-	while (s && s[i])
+	while (old[i])
 	{
-		new[i] = s[i];
+		new[i] = old[i];
 		i++;
 	}
 	return (new);
@@ -94,7 +91,7 @@ int	rip(char *string, int pairs, int pos)
 
 	if (is_balanced(string))
 	{
-		printf("%s\n", string);
+		puts(string);
 		return (1);
 	}
 	while (string[pos])
@@ -109,12 +106,14 @@ int	rip(char *string, int pairs, int pos)
 	return (0);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	char	*str;
 	int		pairs;
 
-	str = ft_strdup("(()(()(");
+	if (argc != 2)
+		return (0);
+	str = ft_scpy(argv[1]);
 	pairs = count_pairs(str);
 	if (str)
 		rip(str, pairs, 0);
