@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 20:02:10 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/03 01:17:34 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 17:34:49 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	permutations(char *set, char *used, char *string, int pos)
 	i = -1;
 	if (!set[pos])
 	{
-		printf("%s\n", string);
+		puts(string);
 		return ;
 	}
 	while (set[++i])
