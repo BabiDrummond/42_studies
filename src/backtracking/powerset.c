@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 17:13:03 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/03 19:06:17 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 20:18:55 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ t_set	*set_values(char **argv)
 
 int	sum_set(t_set *set)
 {
-	int sum;
-	int i;
+	int	sum;
+	int	i;
 
 	i = 0;
 	sum = 0;
@@ -52,9 +52,9 @@ int	sum_set(t_set *set)
 	return (sum);
 }
 
-void print_set(t_set *set)
+void	print_set(t_set *set)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < set->size)
@@ -62,7 +62,7 @@ void print_set(t_set *set)
 	printf("\n");
 }
 
-void powerset(t_set *set, t_set *aux, int n, int i)
+void	powerset(t_set *set, t_set *aux, int n, int i)
 {
 	while (i < set->size)
 	{
@@ -77,7 +77,7 @@ void powerset(t_set *set, t_set *aux, int n, int i)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_set	*set;
 	t_set	*aux;

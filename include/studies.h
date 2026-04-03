@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 22:30:19 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/02 19:56:46 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 19:52:00 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <fcntl.h>
-# include <sys/wait.h>
+# include <math.h>
+# include <float.h>
 
 typedef struct s_list
 {
