@@ -4,9 +4,10 @@ CFLAGS = -Wall -Wextra -Werror
 INCLUDE = -I./include/
 
 SRCS_DIR = src/
-SRCS = stack.c 				\
-	balanced_parentheses.c	\
-	rip.c
+SRCS = stack/stack.c 				\
+	stack/balanced_parentheses.c	\
+	backtracking/permutations.c		\
+	backtracking/rip.c
 OBJS_DIR = objs/
 OBJS = $(SRCS:%.c=$(OBJS_DIR)%.o)
 
