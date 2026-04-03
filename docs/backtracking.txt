@@ -15,3 +15,8 @@ Parentheses:
 Base case: Parenteses estão balanceados
 Opções: Substituir parenteses por espaço
 Validação: Ainda há a mesma quantidade de pares? Se sim, chamar recursão. Se não, reverter.
+
+Permutations:
+Base case: Chegou ao final da string
+Opções: Substituir posição por uma das letras fornecidas
+Validação: Há caracteres repetidos? Se sim, reverter. Se não, chamar recursão.
