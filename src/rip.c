@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 17:03:55 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/02 20:30:30 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/02 21:10:40 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,14 +85,14 @@ int	count_pairs(char *string)
 	return (pairs);
 }
 
-int	rip(char *string, int pairs, int pos)
+void	rip(char *string, int pairs, int pos)
 {
 	char	curr;
 
 	if (is_balanced(string))
 	{
 		puts(string);
-		return (1);
+		return ;
 	}
 	while (string[pos])
 	{
@@ -103,7 +103,6 @@ int	rip(char *string, int pairs, int pos)
 		string[pos] = curr;
 		pos++;
 	}
-	return (0);
 }
 
 int	main(int argc, char **argv)
