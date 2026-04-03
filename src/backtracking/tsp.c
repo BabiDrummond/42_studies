@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 19:51:12 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/03 20:20:18 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 20:48:31 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,38 @@ float	total_distance(t_city *cities, int *path, int n)
 	total += distance(cities[path[i]], cities[path[0]]);
 	return (total);
 }
+
+void	swap(int *i, int *j)
+{
+	int aux;
+
+	aux = *i;
+	*i = *j;
+	*j = aux;
+}
+
 /*
 ** You must implement this function
 ** Use backtracking to try all permutations
 */
-void	solve(t_city *cities, int *path, int n, int pos, float *min);
+void	solve(t_city *cities, int *path, int n, int pos, float *min)
+{
+	float	new_dist;
+	int		i;
+		
+	if (pos >= n)
+		return ;
+	i = 1;
+	while (i < n - 1)
+	{
+		swap(&path[i], &path[i + 1]);
+		new_dist = total_distance(cities, path, n);
+		if (new_dist < *min)
+			*min = new_dist;
+		solve(cities, path, n, pos + 1, min);
+		i++;
+	}
+}
 
 int	main(void)
 {
@@ -82,13 +109,11 @@ int	main(void)
 	for (int i = 0; i < n; i++)
 		path[i] = i;
 	float	min = FLT_MAX;
-	printf("distance: %.2f\n", distance(cities[0], cities[1]));
-	printf("total: %.2f\n", total_distance(cities, path, n));
 	/*
 	** Optimization:
 	** Fix first city → start from pos = 1
 	*/
-	// solve(cities, path, n, 1, &min);
+	solve(cities, path, n, 1, &min);
 	printf("%.2f\n", min);
 	return (0);
 }
