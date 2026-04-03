@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 20:02:10 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/03 01:15:40 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 01:17:34 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_strlen(char *str)
 {
-	int len;
-	
+	int	len;
+
 	len = 0;
 	while (str && str[len])
 		len++;
@@ -24,8 +24,8 @@ int	ft_strlen(char *str)
 
 char	*ft_strdup(char *str)
 {
-	char *new;
-	int i;
+	char	*new;
+	int		i;
 
 	i = 0;
 	if (!str)
@@ -39,26 +39,10 @@ char	*ft_strdup(char *str)
 	return (new);
 }
 
-int	has_duplicate(char *str, char c)
+void	order_str(char *string, char *ascii)
 {
-	int dup;
-
-	dup = 0;
-	while (*str)
-	{
-		if (*str == c)
-			dup++;
-		str++;
-	}
-	if (dup >= 2)
-		return (1);
-	return (0);
-}
-
-void order_str(char *string, char *ascii)
-{
-	char *new;
-	int i;
+	char	*new;
+	int		i;
 
 	i = 0;
 	while (string[i])
@@ -79,7 +63,7 @@ void order_str(char *string, char *ascii)
 
 void	permutations(char *set, char *used, char *string, int pos)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	if (!set[pos])
@@ -98,12 +82,12 @@ void	permutations(char *set, char *used, char *string, int pos)
 	}
 }
 
-int main(int argc, char **argv)
-{	
-	char ordered[256] = {0};
-	char used[256] = {0};
-	char *new;
-	char *dup;
+int	main(int argc, char **argv)
+{
+	char	ordered[256] = {0};
+	char	used[256] = {0};
+	char	*new;
+	char	*dup;
 
 	if (argc != 2)
 		return (1);
