@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 19:51:12 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/03 21:07:47 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 22:07:03 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,16 +66,19 @@ void	solve(t_city *cities, int *path, int n, int pos, float *min)
 	float	new_dist;
 	int		i;
 
-	if (pos >= n)
-		return ;
-	i = 1;
-	while (i < n - 1)
+	if (pos == n)
 	{
-		swap(&path[i], &path[i + 1]);
 		new_dist = total_distance(cities, path, n);
 		if (new_dist < *min)
 			*min = new_dist;
+		return ;
+	}
+	i = pos;
+	while (i < n)
+	{
+		swap(&path[pos], &path[i]);
 		solve(cities, path, n, pos + 1, min);
+		swap(&path[pos], &path[i]);
 		i++;
 	}
 }
@@ -96,11 +99,6 @@ int	main(void)
 	for (int i = 0; i < n; i++)
 		path[i] = i;
 	float	min = FLT_MAX;
-	if (n == 2)
-	{
-		printf("%.2f\n", total_distance(cities, path, n));
-		return (0);
-	}
 	solve(cities, path, n, 1, &min);
 	printf("%.2f\n", min);
 	return (0);
