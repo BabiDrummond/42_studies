@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 21:09:33 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/04 02:01:15 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/04 02:24:30 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,28 +136,6 @@ int	validate_rev_diagonal(char **matrix, int row, int col, int n)
 	return (0);
 }
 
-int count_queens(char **matrix, int n)
-{
-	int row;
-	int col;
-	int q;
-
-	q = 0;
-	row = 0;
-	while (row < n)
-	{
-		col = 0;
-		while (col < n)
-		{
-			if (matrix[row][col] == 'Q')
-				q++;
-			col++;
-		}
-		row++;
-	}
-	return (q);
-}
-
 int	validate_matrix(char **matrix, int row, int col, int n)
 {
 	if (validate_row(matrix, row, n))
@@ -168,34 +146,62 @@ int	validate_matrix(char **matrix, int row, int col, int n)
 		return (3);
 	else if (validate_rev_diagonal(matrix, row, col, n))
 		return (4);
-	if (count_queens(matrix, n) == n)
-		print_matrix(matrix);
 	return (0);
 }
 
-void	n_queens(char **matrix, int row, int col, int n)
+void	print_result(char **matrix, int n)
 {
-	if (row == n)
-		return ;
+	int row;
+	int col;
+
+	col = 0;
+	while (col < n)
+	{
+		row = 0;
+		while (row < n)
+		{
+			if(matrix[row][col] == 'Q')
+				printf("%d", row);
+			row++;
+		}
+		if (col < n - 1)
+			printf(" ");
+		col++;
+	}
+	printf("\n");
+}
+void	n_queens(char **matrix, int col, int n)
+{
+	int	row;
 	if (col == n)
 	{
-		n_queens(matrix, row + 1, 0, n);
+		print_result(matrix, n);
 		return ;
 	}
-	matrix[row][col] = 'Q';
-	if (validate_matrix(matrix, row, col, n) == 0)
-		n_queens(matrix, row, col + 1, n);
-	matrix[row][col] = '.';
-	n_queens(matrix, row, col + 1, n);
+	row = 0;
+	while (row < n)
+	{
+		matrix[row][col] = 'Q';
+		if (validate_matrix(matrix, row, col, n) == 0)
+			n_queens(matrix, col + 1, n);
+		matrix[row][col] = '.';
+		row++;
+	}
 }
 
 int	main(int argc, char **argv)
 {
 	char	**matrix;
+	int		n;
 
 	if (argc != 2)
 		return (1);
+	n = atoi(argv[1]);
+	if (n == 1)
+		printf("0\n");
+	if (n < 4)
+		return (1);
 	matrix = set_matrix(argv);
-	n_queens(matrix, 0, 0, atoi(argv[1]));
+	n_queens(matrix, 0, n);
 	return (0);
 }
