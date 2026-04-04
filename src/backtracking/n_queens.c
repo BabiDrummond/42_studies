@@ -6,7 +6,14 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 21:09:33 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/03 21:09:34 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 21:50:28 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <stdlib.h>
+
+int	main(void)
+{
+	
+}
