@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 17:13:03 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/03 20:55:13 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 21:26:47 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,11 @@ void	print_set(t_set *set)
 
 	i = 0;
 	while (i < set->size)
-		printf("%d ", set->values[i++]);
+	{
+		printf("%d", set->values[i++]);
+		if (i < set->size)
+			printf(" ");
+	}
 	printf("\n");
 }
 

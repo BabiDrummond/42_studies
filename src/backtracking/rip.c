@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 17:03:55 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/03 20:54:52 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 21:22:11 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int	main(int argc, char **argv)
 	int		pairs;
 
 	if (argc != 2)
-		return (0);
+		return (1);
 	str = ft_scpy(argv[1]);
 	pairs = count_pairs(str);
 	if (str)
