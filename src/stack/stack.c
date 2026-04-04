@@ -6,12 +6,12 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 18:07:03 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/03 20:58:31 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 21:08:20 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <unistd.h>
-# include <stdlib.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 typedef struct s_list
 {

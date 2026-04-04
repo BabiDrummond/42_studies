@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 19:51:12 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/03 21:06:30 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 21:07:47 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ float	total_distance(t_city *cities, int *path, int n)
 
 void	swap(int *i, int *j)
 {
-	int aux;
+	int	aux;
 
 	aux = *i;
 	*i = *j;
@@ -92,7 +92,7 @@ int	main(void)
 		printf("0.00\n");
 		return (0);
 	}
-	int	path[11];
+	int		path[11];
 	for (int i = 0; i < n; i++)
 		path[i] = i;
 	float	min = FLT_MAX;
