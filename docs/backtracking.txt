@@ -12,21 +12,26 @@ Fluxo:
 5. Se não, reverter escolha e tentar a próxima.
 
 Rip:
-Base case: Parenteses estão balanceados
-Opções: Substituir parenteses por espaço
+Base case: Parenteses estão balanceados.
+Opções: Substituir parenteses por espaço.
 Validação: Ainda há a mesma quantidade de pares? Se sim, chamar recursão. Se não, reverter.
 
 Permutations:
-Base case: Chegou ao final da string
-Opções: Substituir posição por uma das letras fornecidas
+Base case: Chegou ao final da string.
+Opções: Substituir posição por uma das letras fornecidas.
 Validação: Há caracteres repetidos? Se sim, reverter. Se não, chamar recursão.
 
 Powerset:
-Base case: Soma dos elementos é igual a n
-Opções: Percorrer todos elementos do conjunto
+Base case: Soma dos elementos é igual a n.
+Opções: Percorrer todos elementos do conjunto.
 Validação: Não valida. Sempre coloca elemento do conjunto no subset de soma, faz a soma, chama recursão, e reverte (remove do subset) no final.
 
 Tsp:
-Base case: Contador é maior ou igual à quantidade de cidades
-Opções: Swap todos elementos do conjunto
+Base case: Contador é maior ou igual à quantidade de cidades.
+Opções: Swap todos elementos do conjunto.
 Validação: Calcular distância e substituir se menor que min. Chamar recursão novamente. Reverter swap.
+
+N-Queens:
+Base case: Chegamos ao final do tabuleiro. Ou seja, row e col são iguais a n.
+Opções: Substituir posição atual por Q.
+Validação: Validar coluna, linha e diagonais. Se válido, chamar recursão. Se não, reverter posição atual.
