@@ -6,11 +6,12 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 17:03:55 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/03 01:22:56 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 20:54:52 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "studies.h"
+#include <unistd.h>
+#include <stdio.h>
 
 char	*ft_scpy(char *old)
 {

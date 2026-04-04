@@ -6,11 +6,12 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 17:13:03 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/03 20:18:55 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 20:55:13 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "studies.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef struct s_set
 {

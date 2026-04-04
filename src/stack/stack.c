@@ -6,11 +6,18 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 18:07:03 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/01/28 18:12:25 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 20:58:31 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "studies.h"
+# include <unistd.h>
+# include <stdlib.h>
+
+typedef struct s_list
+{
+	int				number;
+	struct s_list	*next;
+}	t_list;
 
 t_list	*new_node(int number)
 {

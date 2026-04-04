@@ -6,11 +6,13 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 20:02:10 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/03 17:34:49 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 20:55:25 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "studies.h"
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 int	ft_strlen(char *str)
 {

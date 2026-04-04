@@ -6,11 +6,24 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 22:31:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2026/04/02 19:56:07 by bmoreira         ###   ########.fr       */
+/*   Updated: 2026/04/03 20:58:27 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "studies.h"
+# include <unistd.h>
+# include <stdio.h>
+
+typedef struct s_list
+{
+	int				number;
+	struct s_list	*next;
+}	t_list;
+
+// Stack
+t_list	*new_node(int number);
+void	push(t_list **top, t_list *node);
+void	pop(t_list **top);
+int		is_empty(t_list **top);
 
 static int	is_opening(char c)
 {
