@@ -1,0 +1,18 @@
+// [CMD]
+// [INPUT] [CMD] [OUTPUT]
+// fd ========== [CMD] w 
+// w = pipe, dup2 in, fork, execvp
+// [CMD] ========== fd r
+// r = pipe, dup2 out, fork, execvp
+
+
+char *um = "stdout";
+char *pipeUm = "pipeIn";
+
+// dup2(pipeUm, um);
+// um = pipeUm;
+
+1 => fd[1]
+
+char *velho = "babi"; // fd[1]
+char *novo = &velho; // 1
