@@ -41,7 +41,7 @@ void	unexpected(char c)
 	if (c)
 		printf("Unexpected token '%c'\n", c);
 	else
-		printf("Unexpected end of file\n");
+		printf("Unexpected end of input\n");
 }
 
 int	accept(char **s, char c)
@@ -115,27 +115,24 @@ node	*parse_expr(char **s)
 	node	*left;
 	node	*right;
 
-	if (**s)
-	{
-		left = parse_term(s);
-		if (left == NULL)
-			return (NULL);
-		while (**s)
-		{
-			if (**s == '+')
-			{
-				accept(s, '+');
-				right = parse_term(s);
-				if (right == NULL)
-					return (destroy_tree(left), NULL);
-				left = new_node((node){ADD, '+', left, right});
-			}
-			else
-				return (left);
-		}
-	}
-	else
+	if (!**s)
 		return (NULL);
+	left = parse_term(s);
+	if (left == NULL)
+		return (NULL);
+	while (**s)
+	{
+		if (**s == '+')
+		{
+			accept(s, '+');
+			right = parse_term(s);
+			if (right == NULL)
+				return (destroy_tree(left), NULL);
+			left = new_node((node){ADD, '+', left, right});
+		}
+		else
+			return (left);
+	}
 	return (left);
 }
 
