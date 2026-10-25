@@ -5,6 +5,12 @@
 // [CMD] ========== fd r
 // r = pipe, dup2 out, fork, execvp
 
+pipefd[0] é o pipe de leitura do resultado do pipe
+pipefd[1] é o pipe de escrita na entrada do pipe
+
+popen:
+- modo r: cria um pipe que redireciona o resultado de um comando para um fd;
+- modo w: ou cria um pipe que escreve de um fd para a entrada de um comando.
 
 char *um = "stdout";
 char *pipeUm = "pipeIn";

@@ -2,22 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void redirect_output(const char *file, char *const argv[], int *fds)
-{
-	dup2(fds[1], 1);
-	close(fds[0]);
-	close(fds[1]);
-	execvp(file, argv);
-}
-
-void redirect_input(const char *file, char *const argv[], int *fds)
-{
-	dup2(fds[0], 0);
-	close(fds[0]);
-	close(fds[1]);
-	execvp(file, argv);
-}
-
 int	ft_popen(const char *file, char *const argv[], char type)
 {
 	if (file == NULL || argv == NULL || *argv == NULL
@@ -25,26 +9,23 @@ int	ft_popen(const char *file, char *const argv[], char type)
 		return (-1);
 
 	int fds[2];
-	if (pipe(fds) == -1)
+	int pid;
+	type = (type == 'r');
+	if (pipe(fds))
 		return (-1);
-	if (fork() == 0)
+	if ((pid = fork()) == -1)
+		return (close(fds[0]), close(fds[1]), -1);
+	if (pid == 0)
 	{
-		if (type == 'r')
-			redirect_output(file, argv, fds);
-		else if (type == 'w')
-			redirect_input(file, argv, fds);
-		exit(0);
-	}
-	if (type == 'r')
-	{
-		close(fds[1]);
-		return (fds[0]);
-	}
-	else
-	{
+		if (dup2(fds[type], type) == -1)
+			exit(1);
 		close(fds[0]);
-		return (fds[1]);
+		close(fds[1]);
+		execvp(file, argv);
+		exit(1);
 	}
+	close(fds[type]);
+	return (fds[!type]);
 }
 
 int	main()
