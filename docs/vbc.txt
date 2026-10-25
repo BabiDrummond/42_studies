@@ -1,0 +1,51 @@
+vbc:
+- soma
+- multi
+- parenteses
+- 1 dígito
+
+symbols:
++ * = divide nodes
+( ) = priority
+
+1 + 2 * 3
+
+// parse_factor
+	// se for digito
+		// new_node(digito)
+		// next
+		// retorna node
+	// se for (
+		// next
+		// node = parse_expr()
+		// se node == nulo
+			// retorna erro/nulo
+		// next
+		// se for )
+			// next
+			// retorna node
+		// se nao tiver (
+			// retorna erro
+	// retorna node
+
+// parse_term
+	// node->left = parse_factor()
+	// next
+	// while (s)
+		// se for mult
+			// next
+			// node->right = parse_factor()
+			// node->left = new_node(left, right)
+			// next
+	// retorna node->left
+
+// parse_expr
+		// node->left = parse_term()
+		// next
+		// while (s)
+			// se for +
+				// next
+				// node->right = parse_term()
+				// node->left = new_node(left, right)
+				// next
+		// retorna node->left
