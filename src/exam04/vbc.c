@@ -160,7 +160,7 @@ int	main(int argc, char **argv)
 	char *args = argv[1];
 	node *tree = parse_expr(&args);
 	if (!tree)
-		return (0);
+		return (1);
 	if (*args != '\0')
 		return (unexpected(*args), destroy_tree(tree), 1);
 	printf("%d\n", eval_tree(tree));
